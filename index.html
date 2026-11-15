@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Cancún: Selva, Caribe y Aventura · SACMA</title>
+  <meta name="description" content="Propuesta comercial de SACMA, operador mayorista, para agencias minoristas: Cancún, 7 días y 6 noches con Aerolíneas Argentinas, Hotel Riu Ventura All Inclusive y tres excursiones.">
+  <meta name="theme-color" content="#0d2233">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230d2233'/%3E%3Cpath d='M6 19c3-2 5-2 8 0s5 2 8 0 4-2 4-2' stroke='%235fc3c9' stroke-width='2.4' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='12' r='3.2' fill='%23d8b26a'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="vendor/leaflet.css">
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+<header id="top">
+  <a class="brand" href="#portada" aria-label="SACMA, volver al inicio">
+    <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="currentColor"/><path d="M6 19c3-2 5-2 8 0s5 2 8 0 4-2 4-2" stroke="#5fc3c9" stroke-width="2.4" fill="none" stroke-linecap="round"/><circle cx="16" cy="12" r="3.2" fill="#d8b26a"/></svg>
+    <span class="brand-name">SACMA</span>
+    <span class="brand-sub">Operador mayorista</span>
+  </a>
+  <div class="top-section" aria-live="polite"><span id="top-n">01</span><b id="top-t">Inicio</b></div>
+  <nav class="pager" aria-label="Avanzar por la presentación">
+    <button id="prev" aria-label="Sección anterior">‹</button>
+    <span id="count">1 / 16</span>
+    <button id="next" aria-label="Sección siguiente">›</button>
+  </nav>
+</header>
+
+<nav id="rail" aria-label="Secciones"></nav>
+<div id="presenter" hidden></div>
+
+<main>
+
+<!-- 1 · PORTADA -->
+<section class="slide hero" id="portada" data-label="Inicio" data-who="Integrante 1" data-nota="Saludo, presentación de SACMA como mayorista y del producto.">
+  <img class="hero-bg" src="img/hotel/hero-hotel-riu-ventura.jpg" alt="">
+  <div class="hero-shade"></div>
+  <div class="hero-in">
+    <p class="kicker light">Propuesta comercial para agencias minoristas · Temporada enero 2027</p>
+    <h1>Cancún<span>Selva, Caribe y Aventura</span></h1>
+    <p class="hero-lead">Un paquete grupal listo para vender: aéreo directo, All Inclusive frente al mar y tres excursiones que lo diferencian de cualquier otro Cancún.</p>
+    <ul class="hero-facts">
+      <li><b>7 días · 6 noches</b><span>11 al 17 de enero de 2027</span></li>
+      <li><b>Vuelo directo</b><span>Aerolíneas Argentinas</span></li>
+      <li><b>All Inclusive</b><span>Hotel Riu Ventura</span></li>
+      <li><b>Desde USD 5.178</b><span>por pasajero en base doble</span></li>
+    </ul>
+  </div>
+  <button class="scroll-cue" data-go="next" aria-label="Comenzar">Comenzar <i></i></button>
+</section>
+
+<!-- 2 · EL PRODUCTO -->
+<section class="slide" id="producto" data-label="El producto" data-who="Integrante 1" data-nota="Por qué Cancún y por qué este producto no es «otro Cancún». Segmentos que capta.">
+  <div class="wrap">
+    <p class="kicker">El producto</p>
+    <h2>No es otro paquete de Cancún con vuelo y hotel.</h2>
+    <p class="lead">Combinamos el descanso del All Inclusive con tres miradas del Caribe mexicano. Sus pasajeros vuelven con la playa, pero también con la selva y el mar por dentro.</p>
+    <div class="pillars">
+      <article class="pillar">
+        <img src="img/excursiones/selva-welcome.jpg" alt="Sendero de selva en Puerto Morelos" loading="lazy">
+        <div><span class="pill-n">Selva</span><h3>Safari de Biodiversidad</h3><p>Ecoturismo guiado en la Selva Maya. Nuestro diferencial.</p></div>
+      </article>
+      <article class="pillar">
+        <img src="img/excursiones/isla-playa-norte.jpg" alt="Playa Norte en Isla Mujeres" loading="lazy">
+        <div><span class="pill-n">Caribe</span><h3>Isla Mujeres</h3><p>Navegación y la playa más famosa de la región.</p></div>
+      </article>
+      <article class="pillar">
+        <img src="img/excursiones/musa-urban-reef.jpg" alt="Esculturas sumergidas del MUSA" loading="lazy">
+        <div><span class="pill-n">Cultura</span><h3>Museo Subacuático</h3><p>Snorkel entre esculturas que son arrecife.</p></div>
+      </article>
+    </div>
+    <div class="segments">
+      <h3 class="mini">¿A quién se lo pueden vender?</h3>
+      <ul>
+        <li><b>Jóvenes de 18 a 35</b> que buscan aventura, actividades acuáticas y compartir excursiones.</li>
+        <li><b>Adultos y parejas hasta 55</b> que priorizan confort, gastronomía y un viaje resuelto.</li>
+        <li><b>Viajeros de naturaleza</b> interesados en ecoturismo, fauna y cenotes.</li>
+        <li><b>Quienes ya conocen Cancún</b> y quieren volver con una propuesta distinta.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 3 · QUÉ INCLUYE -->
+<section class="slide alt" id="incluye" data-label="Qué incluye" data-who="Integrante 2" data-nota="Destino y servicios. Cada tarjeta lleva a su detalle.">
+  <div class="wrap">
+    <p class="kicker">Servicios</p>
+    <h2>Todo integrado en un solo producto.</h2>
+    <p class="lead">Su agencia vende un paquete cerrado: no tiene que contratar cada prestación por separado. Toque una tarjeta para ver el detalle.</p>
+    <div class="services">
+      <a class="svc" href="#aereo"><svg viewBox="0 0 24 24"><path d="M2.5 13.5 21 6l-2.5 3-6 4 1 7-2 .5-2.5-6-4.5 1.5-1 2H2l.5-4.5z"/></svg><b>Aéreo directo</b><span>Aerolíneas Argentinas<br>Ezeiza – Cancún – Ezeiza</span></a>
+      <a class="svc" href="#traslados"><svg viewBox="0 0 24 24"><path d="M3 7h13l4 4v5h-2a2 2 0 0 1-4 0H9a2 2 0 0 1-4 0H3zM16 8v3h3"/></svg><b>Traslados IN/OUT</b><span>Aeropuerto – hotel – aeropuerto<br>con recepción en destino</span></a>
+      <a class="svc" href="#hotel"><svg viewBox="0 0 24 24"><path d="M3 20V9l9-5 9 5v11M8 20v-6h8v6M3 20h18"/></svg><b>6 noches All Inclusive</b><span>Hotel Riu Ventura<br>comidas, bebidas y shows</span></a>
+      <a class="svc" href="#incluidas"><svg viewBox="0 0 24 24"><path d="M12 3c-3 4-3 7 0 10 3-3 3-6 0-10zM12 13v8M7 9c-2 3-1 6 3 7M17 9c2 3 1 6-3 7"/></svg><b>3 excursiones</b><span>Selva Maya · Isla Mujeres<br>Museo Subacuático</span></a>
+      <a class="svc" href="#asistencia"><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 4.5 3.4 8 8 9 4.6-1 8-4.5 8-9V6zM12 8v7M8.5 11.5h7"/></svg><b>Asistencia al viajero</b><span>Universal Assistance · Plan Oro<br>los 7 días del viaje</span></a>
+      <a class="svc" href="#itinerario"><svg viewBox="0 0 24 24"><path d="M4 5h16v15H4zM4 9h16M8 3v4M16 3v4"/></svg><b>Salida grupal</b><span>11 al 17 de enero de 2027<br>cupo para 26 pasajeros</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · AÉREO -->
+<section class="slide" id="aereo" data-label="Aéreo" data-who="Integrante 2" data-nota="Vuelo directo, horarios, avión, cabina económica y equipaje.">
+  <div class="wrap">
+    <div class="head-row">
+      <div>
+        <p class="kicker">Transporte aéreo</p>
+        <h2>Vuelo directo con Aerolíneas Argentinas.</h2>
+      </div>
+      <span class="stamp">Sin escalas</span>
+    </div>
+    <div class="flight-grid">
+      <div class="passes">
+        <article class="pass">
+          <header><span>Ida</span><b>Lunes 11 de enero de 2027</b></header>
+          <div class="route">
+            <div><i>EZE</i><b>08:25</b><span>Buenos Aires · Ezeiza</span></div>
+            <div class="arc"><svg viewBox="0 0 120 30" aria-hidden="true"><path d="M4 26 Q60 -6 116 26" fill="none" stroke="currentColor" stroke-dasharray="3 4"/></svg><span>9 h 05 min · directo</span></div>
+            <div><i>CUN</i><b>15:30</b><span>Cancún · hora local</span></div>
+          </div>
+        </article>
+        <article class="pass">
+          <header><span>Regreso</span><b>Domingo 17 de enero de 2027</b></header>
+          <div class="route">
+            <div><i>CUN</i><b>08:50</b><span>Cancún</span></div>
+            <div class="arc"><svg viewBox="0 0 120 30" aria-hidden="true"><path d="M4 26 Q60 -6 116 26" fill="none" stroke="currentColor" stroke-dasharray="3 4"/></svg><span>8 h 40 min · directo</span></div>
+            <div><i>EZE</i><b>19:30</b><span>Buenos Aires · Ezeiza</span></div>
+          </div>
+        </article>
+        <div class="bags">
+          <h3 class="mini">Equipaje</h3>
+          <div class="bag ok"><b>Incluido</b><span><strong>Mochila o artículo personal</strong> · hasta 3 kg · 40 × 30 × 15 cm, debajo del asiento delantero</span></div>
+          <div class="bag add"><b>Adicional</b><span><strong>Carry-on</strong> · hasta 10 kg · 55 × 35 × 25 cm, según franquicia de la compañía</span></div>
+          <div class="bag add"><b>Adicional</b><span><strong>Valija en bodega</strong> · no incluida en la tarifa; se puede sumar con cargo</span></div>
+        </div>
+      </div>
+      <div class="cabin">
+        <figure class="photo big" data-zoom>
+          <img src="img/vuelo/cabina-economy-737max.jpg" alt="Cabina económica del Boeing 737 MAX 8 de Aerolíneas Argentinas" loading="lazy">
+          <figcaption><b>Clase Economy</b> · asientos estándar, configuración 3 + 3 <em>Foto oficial: Aerolíneas Argentinas · vía Blog Sir Chandler</em></figcaption>
+        </figure>
+        <div class="cabin-row">
+          <figure class="photo" data-zoom>
+            <img src="img/vuelo/737max-noche.jpg" alt="Boeing 737 MAX 8 de Aerolíneas Argentinas en plataforma" loading="lazy">
+            <figcaption>Boeing 737 MAX 8 <em>Foto oficial: Aerolíneas Argentinas · vía Blog Sir Chandler</em></figcaption>
+          </figure>
+          <div class="yt" data-yt="nbJjIMaFUkg" data-title="Cómo es volar en el 737 MAX 8 de Aerolíneas Argentinas" data-canal="Info Viajera"></div>
+        </div>
+        <p class="fine">Equipo previsto: Boeing 737 MAX 8. La aerolínea puede modificarlo por razones operativas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · TRASLADOS -->
+<section class="slide alt" id="traslados" data-label="Traslados" data-who="Integrante 2" data-nota="Traslado IN y OUT con recepción del personal de asistencia.">
+  <div class="wrap">
+    <p class="kicker">Traslados</p>
+    <h2>Del aeropuerto al hotel, sin que el pasajero resuelva nada.</h2>
+    <div class="transfer">
+      <figure class="photo big" data-zoom>
+        <img src="img/transfer/sprinter-ado.jpg" alt="Van Mercedes-Benz Sprinter de traslado en el aeropuerto de Cancún" loading="lazy">
+        <figcaption><b>Unidad de traslado</b> · van tipo Mercedes-Benz Sprinter con aire acondicionado <em>Imagen de referencia · Foto: Bull-Doser, dominio público</em></figcaption>
+      </figure>
+      <div class="transfer-side">
+        <figure class="photo" data-zoom>
+          <img src="img/otros/aeropuerto-cun.jpg" alt="Terminal del Aeropuerto Internacional de Cancún" loading="lazy">
+          <figcaption>Aeropuerto Internacional de Cancún <em>Foto: Antony-22, CC BY-SA 4.0</em></figcaption>
+        </figure>
+        <div class="legs">
+          <div class="leg">
+            <span class="tag">IN · 11 de enero</span>
+            <ol>
+              <li><b>15:30</b> Aterrizaje en Cancún</li>
+              <li><b>16:30</b> Migraciones y equipaje; recepción del personal de asistencia</li>
+              <li><b>16:45</b> Salida hacia el hotel</li>
+              <li><b>17:30</b> Llegada y check-in en el Riu Ventura</li>
+            </ol>
+          </div>
+          <div class="leg">
+            <span class="tag">OUT · 17 de enero</span>
+            <ol>
+              <li><b>04:45</b> Check-out y encuentro en el lobby</li>
+              <li><b>05:00</b> Salida hacia el aeropuerto</li>
+              <li><b>05:30</b> Check-in en Aerolíneas Argentinas</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 · HOTEL -->
+<section class="slide" id="hotel" data-label="Hotel" data-who="Integrante 2" data-nota="Riu Ventura: ubicación, habitaciones, gastronomía, piscinas. Video oficial.">
+  <div class="wrap">
+    <div class="head-row">
+      <div>
+        <p class="kicker">Alojamiento</p>
+        <h2>Hotel Riu Ventura · All Inclusive</h2>
+      </div>
+      <span class="stamp soft">6 noches</span>
+    </div>
+    <div class="hotel">
+      <div class="gallery">
+        <div class="tabs" role="tablist" id="hotel-tabs"></div>
+        <figure class="stage" data-zoom>
+          <img id="hotel-main" src="img/hotel/hero-hotel-riu-ventura.jpg" alt="">
+          <figcaption id="hotel-cap"></figcaption>
+        </figure>
+        <div class="thumbs" id="hotel-thumbs"></div>
+      </div>
+      <aside class="hotel-info">
+        <p>Hotel inaugurado en 2025 sobre la <b>Playa El Mirador</b>, en la zona hotelera de Cancún, junto al tradicional cartel de la ciudad.</p>
+        <h3 class="mini">El All Inclusive incluye</h3>
+        <ul class="checks">
+          <li>Desayuno, almuerzo y cena buffet</li>
+          <li>Restaurantes temáticos: mexicano, japonés, italiano, grill y Kulinarium</li>
+          <li>Bebidas nacionales e internacionales las 24 horas</li>
+          <li>Bares en el lobby, la piscina y dentro del agua</li>
+          <li>Piscinas, reposeras y toallas de playa</li>
+          <li>Shows nocturnos, actividades y gimnasio</li>
+        </ul>
+        <p class="fine">Con cargo: spa y servicios personales. Categoría de habitación según base contratada.</p>
+        <div class="yt" data-yt="fQzdSM4Dbsc" data-title="Video oficial del Riu Ventura" data-canal="RIU Hotels &amp; Resorts"></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- 7 · ASISTENCIA -->
+<section class="slide alt" id="asistencia" data-label="Asistencia" data-who="Integrante 2" data-nota="Alcance de la cobertura del plan Oro. No es un seguro médico.">
+  <div class="wrap">
+    <p class="kicker">Asistencia al viajero</p>
+    <h2>Universal Assistance · Plan Oro</h2>
+    <p class="lead">Cobertura internacional durante los <b>7 días</b> del viaje, sin límite de edad. Se solicita a la Central Operativa, que coordina la atención las 24 horas.</p>
+    <div class="cover">
+      <div class="cov"><b>Asistencia médica</b><span>por enfermedad o accidente, hasta el límite del plan</span></div>
+      <div class="cov"><b>Medicamentos</b><span>ante situaciones médicas cubiertas</span></div>
+      <div class="cov"><b>Pérdida de equipaje</b><span>asistencia e indemnización según condiciones</span></div>
+      <div class="cov"><b>Demora de vuelo</b><span>prestación ante demoras</span></div>
+      <div class="cov"><b>Regreso anticipado</b><span>por enfermedad del titular o siniestro en el domicilio</span></div>
+      <div class="cov"><b>Traslado de ejecutivo</b><span>en los casos previstos</span></div>
+      <div class="cov"><b>Acompañamiento de menores</b><span>que viajen con el titular</span></div>
+      <div class="cov"><b>Mensajes urgentes</b><span>a familiares o contactos</span></div>
+      <div class="cov hl"><b>Línea 24 horas</b><span>orientación y asistencia permanente</span></div>
+    </div>
+    <div class="note-row">
+      <p><b>Para informar al pasajero:</b> la asistencia no es un seguro médico ni reemplaza la obra social o prepaga. El voucher es personal e intransferible. Válida en destinos internacionales excepto Cuba.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 8 · TARIFAS -->
+<section class="slide" id="tarifas" data-label="Tarifas" data-who="Integrante 3" data-nota="Precios finales por pasajero en las tres bases. Grupo de 26 pax.">
+  <div class="wrap">
+    <p class="kicker">Tarifas</p>
+    <h2>Precio final por pasajero</h2>
+    <p class="lead">Cotización para un grupo de <b>26 pasajeros</b> (mínimo del producto: 20). Valores en dólares estadounidenses, impuestos incluidos.</p>
+    <div class="prices" id="prices"></div>
+    <div class="price-notes">
+      <p><b>Suplemento por habitación individual:</b> <span id="sup-sgl"></span> sobre la base doble.</p>
+      <p><b>Incluye:</b> aéreo, traslados, 6 noches All Inclusive, 3 excursiones, asistencia e impuestos.</p>
+      <p><b>No incluye:</b> excursiones opcionales, valija en bodega, almuerzo en Isla Mujeres, gastos personales.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 9 · COSTOS -->
+<section class="slide alt" id="costos" data-label="Costos" data-who="Integrante 3" data-nota="Costos fijos y variables, margen del 20% con coeficiente 0,80, punto de equilibrio.">
+  <div class="wrap">
+    <p class="kicker">Cómo se forma el precio</p>
+    <h2>De costo a precio de venta</h2>
+    <div class="seg" id="cost-base" role="tablist" aria-label="Elegir base"></div>
+    <div class="cost-grid">
+      <div class="cost-left">
+        <div class="bar" id="cost-bar" aria-hidden="true"></div>
+        <table class="cost-table" id="cost-table"></table>
+      </div>
+      <div class="formula" id="formula"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 · EXCURSIONES INCLUIDAS -->
+<section class="slide" id="incluidas" data-label="Excursiones" data-who="Integrante 4" data-nota="Las tres excursiones incluidas; el Safari es la propuesta estrella.">
+  <div class="wrap">
+    <p class="kicker">Excursiones incluidas</p>
+    <h2>Tres experiencias incluidas en la tarifa</h2>
+    <p class="lead">Toque cada excursión para ver fotos, video, horarios y qué incluye.</p>
+    <div class="exc" id="exc-list"></div>
+  </div>
+</section>
+
+<!-- 11 · OPCIONALES -->
+<section class="slide alt" id="opcionales" data-label="Opcionales" data-who="Integrante 4" data-nota="Opcionales para vender aparte: no están en el precio base.">
+  <div class="wrap">
+    <div class="head-row">
+      <div>
+        <p class="kicker warm">Excursiones opcionales</p>
+        <h2>Para ampliar el viaje, y la venta</h2>
+      </div>
+      <span class="stamp warm">No incluidas</span>
+    </div>
+    <p class="lead">No están en el precio base. Se cotizan y contratan por separado, ideales para el día libre (día 5) o para quien quiere sumar experiencias.</p>
+    <div class="opc-grid" id="opc-list"></div>
+  </div>
+</section>
+
+<!-- 12 · MAPA -->
+<section class="slide" id="mapa" data-label="Mapa" data-who="Integrante 4" data-nota="Ubicación del hotel, el aeropuerto y cada excursión.">
+  <div class="wrap">
+    <p class="kicker">Mapa del destino</p>
+    <h2>Dónde está cada experiencia</h2>
+    <div class="map-wrap">
+      <div class="map-ui">
+        <div class="seg" id="map-filter" role="tablist" aria-label="Filtrar el mapa">
+          <button class="on" data-f="inc">Incluidas</button>
+          <button data-f="opc">Opcionales</button>
+          <button data-f="all">Todo</button>
+        </div>
+        <ul class="legend">
+          <li><i class="dot base"></i>Hotel y aeropuerto</li>
+          <li><i class="dot inc"></i>Excursión incluida</li>
+          <li><i class="dot opc"></i>Excursión opcional</li>
+        </ul>
+        <ol class="map-list" id="map-list"></ol>
+      </div>
+      <div id="map" role="region" aria-label="Mapa interactivo de Cancún y alrededores"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 13 · ITINERARIO -->
+<section class="slide alt" id="itinerario" data-label="Itinerario" data-who="Integrante 4" data-nota="Recorrido día por día.">
+  <div class="wrap">
+    <p class="kicker">Itinerario</p>
+    <h2>Siete días, día por día</h2>
+    <div class="days" id="days" role="tablist" aria-label="Días del viaje"></div>
+    <div class="day-detail" id="day-detail"></div>
+  </div>
+</section>
+
+<!-- 14 · LIQUIDACIÓN -->
+<section class="slide" id="liquidacion" data-label="Liquidación" data-who="Integrante 5" data-nota="Precio al pasajero, neto que se abona a SACMA y comisión de la agencia.">
+  <div class="wrap">
+    <p class="kicker">Liquidación para la agencia</p>
+    <h2>Lo que cobra su agencia en cada venta</h2>
+    <div class="liq">
+      <table class="liq-table">
+        <thead><tr><th>Base</th><th>Precio al pasajero</th><th>Neto a SACMA</th><th>Comisión agencia</th><th>Impuestos incluidos</th></tr></thead>
+        <tbody id="liq-body"></tbody>
+      </table>
+      <div class="calc">
+        <h3 class="mini">Calculadora de venta</h3>
+        <p class="fine">Cargue cuántos pasajeros vende en cada base.</p>
+        <div class="calc-in" id="calc-in"></div>
+        <dl class="calc-out">
+          <div><dt>Cobra al pasajero</dt><dd id="c-venta">USD 0</dd></div>
+          <div><dt>Abona a SACMA</dt><dd id="c-neto">USD 0</dd></div>
+          <div class="hl"><dt>Comisión de la agencia</dt><dd id="c-com">USD 0</dd></div>
+        </dl>
+      </div>
+    </div>
+    <p class="fine">Neto minorista = costo total ÷ 0,90 + impuestos. La diferencia con el precio de venta es la comisión de la agencia.</p>
+  </div>
+</section>
+
+<!-- 15 · FOLLETO -->
+<section class="slide alt" id="folleto" data-label="Folleto" data-who="Integrante 5" data-nota="Material de venta para WhatsApp e Instagram.">
+  <div class="wrap">
+    <p class="kicker">Material de venta</p>
+    <h2>Folleto listo para WhatsApp e Instagram</h2>
+    <div class="flyers">
+      <figure>
+        <div class="flyer f45">
+          <img src="img/hotel/hero-hotel-riu-ventura.jpg" alt="">
+          <div class="fl-in">
+            <span class="fl-brand">SACMA <i>Operador mayorista</i></span>
+            <span class="fl-k">Salida grupal · 11 al 17 enero 2027</span>
+            <b class="fl-t">Cancún</b>
+            <span class="fl-s">Selva, Caribe y Aventura</span>
+            <ul>
+              <li>Vuelo directo Aerolíneas Argentinas</li>
+              <li>6 noches Riu Ventura All Inclusive</li>
+              <li>Safari Selva Maya · Isla Mujeres · MUSA</li>
+              <li>Traslados y asistencia al viajero</li>
+            </ul>
+            <span class="fl-p"><small>Desde</small> USD 5.178 <small>por persona en base doble</small></span>
+          </div>
+        </div>
+        <figcaption>Instagram · 4:5</figcaption>
+      </figure>
+      <figure>
+        <div class="flyer f916">
+          <img src="img/excursiones/isla-playa-norte.jpg" alt="">
+          <div class="fl-in">
+            <span class="fl-brand">SACMA <i>Operador mayorista</i></span>
+            <b class="fl-t">Cancún</b>
+            <span class="fl-s">Selva, Caribe y Aventura</span>
+            <span class="fl-k">7 días · 6 noches · enero 2027</span>
+            <ul>
+              <li>Aéreo directo</li>
+              <li>All Inclusive</li>
+              <li>3 excursiones</li>
+            </ul>
+            <span class="fl-p"><small>Desde</small> USD 5.178</span>
+            <span class="fl-cta">Consultá en tu agencia de viajes</span>
+          </div>
+        </div>
+        <figcaption>WhatsApp e historias · 9:16</figcaption>
+      </figure>
+      <div class="flyer-txt">
+        <h3 class="mini">Cómo usarlo</h3>
+        <ul class="checks">
+          <li>Formato vertical para estados de WhatsApp e historias.</li>
+          <li>Formato 4:5 para el feed de Instagram.</li>
+          <li>Precio «desde» en base doble, el de mayor volumen.</li>
+          <li>Espacio para sumar el logo y contacto de su agencia.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 16 · CIERRE -->
+<section class="slide hero end" id="cierre" data-label="Cierre" data-who="Integrante 5" data-nota="Recordar el argumento principal: el Safari. Invitación a sumar el producto.">
+  <img class="hero-bg" src="img/excursiones/isla-playa-norte.jpg" alt="">
+  <div class="hero-shade"></div>
+  <div class="hero-in">
+    <p class="kicker light">El argumento de venta</p>
+    <h2 class="end-t">Cancún desde tres miradas:<br><em>la selva, el mar y la cultura.</em></h2>
+    <p class="hero-lead">Un producto organizado, con servicios integrados, excursiones seleccionadas y tres bases de alojamiento. Los invitamos a sumarlo a su oferta.</p>
+    <p class="thanks">Muchas gracias.</p>
+    <p class="credits-link"><a href="CREDITOS.md">Créditos de fotos y videos</a></p>
+  </div>
+</section>
+
+</main>
+
+<!-- Ventana de detalle (excursiones) y visor de fotos -->
+<div id="modal" role="dialog" aria-modal="true" aria-labelledby="m-title" hidden>
+  <div class="m-back" data-close></div>
+  <article class="m-card">
+    <button class="m-x" data-close aria-label="Cerrar">×</button>
+    <div id="m-body"></div>
+  </article>
+</div>
+<div id="lightbox" hidden><button class="m-x" aria-label="Cerrar">×</button><img alt=""><p></p></div>
+
+<script src="vendor/leaflet.js"></script>
+<script src="js/datos.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
